@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dom</title>
+</head>
+
+<body>
+  <script>
+    function changeColor() {
+      const para = document.getElementById('para')
+      if (para.style.color === 'red') {
+        para.style.color = 'violet'
+      }
+      else {
+        para.style.color = 'red'
+      }
+    }
+
+    function showtext() {
+      const text = document.getElementById('hidepara')
+      if (text.style.display === 'none') {
+        text.style.display = 'block'
+        text.textContent = 'Once an element is selected, you can change its text content using one of the following properties'
+      }
+      else {
+        text.style.display = 'none'
+      }
+    }
+
+    function resize() {
+      const size = document.querySelector('.home')
+      const img = document.getElementById('image')
+      if (img.style.width === '50px') {
+        img.style.width = '500px'
+        if (img.style.width = '500px') {
+          img.style.borderRadius = '50px'
+        }
+        if (img.style.borderRadius = '50px') {
+          size.style.backgroundColor = 'yellow'
+        }
+      }
+      else {
+        img.style.width = '50px'
+        img.style.borderRadius = '0px'
+        size.style.backgroundColor = 'white'
+      }
+    }
+
+    function lilist(){
+      const node=document.createElement("li")
+      const textnode=document.createTextNode("Bluberry")
+      node.append(textnode)
+      document.getElementById('items').append(node)
+    }
+
+    function removetext(){
+      const retext=document.getElementById('remove')
+      retext.remove()
+    }
+  </script>
+  <h1 id="h1" onclick="document.getElementById('h1').innerHTML='DOM Manipulation using JS'" style="cursor: pointer;">DOM
+    Manipulation</h1>
+  <p id="para" style="color: red;">HTML form validation can be done by JavaScript.
+    If a form field (fname) is empty, this function alerts a message, and returns false, to prevent the form from being
+    submitted:
+  </p>
+  <input type="button" value="click" onclick="changeColor()">
+  <br>
+  <p id="hidepara" style="display: none;"></p>
+  <input type="button" value="Show text" onclick="showtext()">
+  <br>
+  <br>
+  <p id="quote" style="max-width: 500px;">
+    “- If you fail, never give up because F.A.I.L. means "first Attempt In Learning"
+    - End is not the end, if fact E.N.D. means "Effort Never Dies"
+    - If you get No as an answer, remember N.O. means "Next Opportunity".
+    So Let's be positive. "Dr. A.P.J. Abdul Kalam of feel LIFE”
+    ― A.P.J. Abdul Kalam
+  </p>
+  <input type="button" value="Green" onclick="document.getElementById('quote').style.backgroundColor='lightgreen'">
+  <input type="button" value="Pink" onclick="document.getElementById('quote').style.backgroundColor='lightpink'">
+  <input type="button" value="Blue" onclick="document.getElementById('quote').style.backgroundColor='lightblue'">
+  <br>
+  <h2>The Basket has following items:</h2>
+  <ul id="items">
+    <li>Orange</li>
+    <li>Apple</li>
+    <li>Plum</li>
+  </ul>
+  <input type="button" value="Add Item" onclick="lilist()">
+  <br>
+  <h3 id="remove">Sample text to remove</h3>
+  <input type="button" value="Remove" onclick="removetext()">
+  <div class="home" style="width: 1000px; background-color: none;">
+    <h2>Baby Elephant</h2>
+    <img id="image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-9MLjiRq1vDeRuIsh5rgS8E8Lh9HTEc5SpQ&s"
+      alt="" width="50px">
+  </div>
+  <input type="button" value="Enlarge" onclick="resize()">
+</body>
+
+</html>
